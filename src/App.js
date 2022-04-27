@@ -2,13 +2,17 @@ import './Sass/App.css';
 
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-import Page from "./Components/Page.js";
+import Main from "./Components/Main.js";
+import Game from "./Components/Game.js";
 
 function App() {
   return (
+    <div className='container'>
     <Router>
-       <Route path="" component={Page}/>
+      <Route path="/" component={Main}/>
+      <Route path="/game" component={Game}/>
     </Router>
+    </div>
   );
 }
 

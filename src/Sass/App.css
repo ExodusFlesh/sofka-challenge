@@ -1,3 +1,72 @@
+@-webkit-keyframes movey {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+@keyframes movey {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.containerTitle {
+  text-align: center;
+}
+.containerTitle .nameGame {
+  margin-top: 15%;
+  margin-bottom: 30px;
+  cursor: default;
+}
+.containerTitle .nameGame h1 {
+  color: #fdfffc;
+  font-size: 70px;
+}
+.containerTitle .nameGame h1 span {
+  color: #fffb00;
+}
+.containerTitle .player {
+  display: grid;
+  gap: 20px;
+  margin: auto auto;
+  justify-items: center;
+}
+.containerTitle .player .playerName {
+  background-color: #fdfffc;
+  height: 30px;
+  width: 250px;
+  border: 0px solid #000000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 25px;
+}
+.containerTitle .player .playerStart {
+  background-color: #2ec4b6;
+  height: 30px;
+  width: 200px;
+  border: 0px solid #000000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fdfffc;
+  text-decoration: none;
+  padding-top: 6px;
+}
+.containerTitle .player .playerStart:hover {
+  -webkit-animation: movey 0.6s linear alternate infinite;
+  animation: movey 0.6s linear alternate infinite;
+  background-color: #00ffe585;
+  box-shadow: 0 2px #888888;
+}
 
 /*# sourceMappingURL=App.css.map */
