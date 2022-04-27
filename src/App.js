@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='container'>
     <Router>
-      <Route path="/" component={Main}/>
+      <Route path="/" exact component={Main}/> 
       <Route path="/game" component={Game}/>
     </Router>
     </div>
