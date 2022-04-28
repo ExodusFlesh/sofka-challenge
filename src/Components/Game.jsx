@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { getQuestions } from '../db';
 
 const Game = () => {
-
+    
+    const navigate = useNavigate();
     const [round, setRound] = useState(0);
-    const [active, setActive] = useState(true);
 
     let questions = getQuestions();
+    let categoryQuestion = questions.filter(question => question.category === round +1);
+    let currentlyQuestion =  (categoryQuestion[(Math.floor(Math.random() * 5))]);
 
-    let currentlyQuestion =  (questions[(Math.floor(Math.random() * 25))]);
-
-    function handleAnswer(correct, e) {
-        correct === true ? setRound(round + 1) : setActive(false);
-        console.log(currentlyQuestion.category[5]);
+    function handleAnswer(correct) {
+        correct === true ? setRound(round + 1) : navigate("/Highscore");
+        console.log(round);
+        if(round >= 4 ){
+            navigate("/Highscore");
+        }
     }
 
     function ShowQuestion() {
@@ -32,7 +35,7 @@ const Game = () => {
                 {ShowQuestion()}
                 <div className='game-questions-options'>
                     {currentlyQuestion.answers.map((question) => (
-                        <button key={question} onClick={(e) => handleAnswer(currentlyQuestion.answers[currentlyQuestion.solution] === question ? true:false, e)}>
+                        <button key={question} onClick={(e) => handleAnswer(currentlyQuestion.answers[currentlyQuestion.solution] === question ? true:false)}>
                             {question}
                         </button>
                     ))
