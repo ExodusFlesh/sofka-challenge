@@ -31,6 +31,15 @@ $dark: #000000;
     }
 }
 
+@mixin transition($x...){
+    -webkit-transition: $x;
+    -moz-transition: $x;
+    -ms-transition: $x;
+    -o-transition: $x;
+    transition: $x;
+}
+
+
 @include keyframes(movey) {
     from {
         transform: translateY(0px);
@@ -40,6 +49,7 @@ $dark: #000000;
         transform: translateY(4px);
     }
 }
+
 
 // mixin buttons
 
@@ -57,7 +67,7 @@ $dark: #000000;
 // General
 
 * {
-    font-family:'Rubik';
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 // Primera presentacion
@@ -97,11 +107,14 @@ $dark: #000000;
             color: $white;
             text-decoration: none;
             padding-top: 6px;
-
+            @include transition(background-color .5s);
             &:hover {
                 @include animation('movey 0.6s linear alternate infinite');
                 background-color: $bluemedium;
                 box-shadow: 0 2px rgb(136, 136, 136);
+            }
+            &:active{
+                background-color: $bluedark;
             }
         }
     }
@@ -120,8 +133,7 @@ $dark: #000000;
         margin-left: auto;
         margin-right: auto;
 
-        .game-score-player-name,
-        .game-score-detail-score {
+        .game-score-player-name,.game-score-detail-score {
             @include button($white, 30px, 200px);
             font-size: 25px;
             text-decoration: none;
@@ -130,8 +142,31 @@ $dark: #000000;
     }
 
     .game-questions {
-        height: 600px;
+        margin-top: 50px;
+        height: 550px;
         color: $white;
+        .game-questions-options{
+            margin-top: 50px;
+            display:grid;
+            grid-gap: 100px;
+            grid: 100px 100px / auto auto;
+            margin-left: 20%;
+            width: 60%;
+            height: 85%;
+            button{
+                font-size: 30px;
+                @include button ($white, auto,auto);
+                @include animation('movey 1.5s linear alternate infinite');
+                @include transition(width 2s, background-color .5s);
+                &:hover{
+                    width: 101%;
+                    background-color: $bluelight;
+                }
+                &:active{
+                    background-color: $bluedark;
+                }
+            }
+        }
     }
 
     .game-foot {
