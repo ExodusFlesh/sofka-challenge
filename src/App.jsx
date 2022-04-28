@@ -9,7 +9,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/game:id" element={<Game />}/>
+                <Route path="/game/:id" element={<Game/>}/>
                 <Route path="/" element={<Main/>}/>
             </Routes>
         </Router>
