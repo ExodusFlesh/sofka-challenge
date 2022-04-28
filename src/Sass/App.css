@@ -15,7 +15,7 @@
   }
 }
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rubik";
 }
 
 .containerTitle {
@@ -69,14 +69,61 @@
   box-shadow: 0 2px #888888;
 }
 
+.game {
+  text-align: center;
+}
 .game .game-score {
   display: flex;
   gap: 250px;
   justify-content: center;
-  background-color: #fdfffc;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+.game .game-score .game-score-player-name,
+.game .game-score .game-score-detail-score {
+  background-color: #fdfffc;
+  height: 30px;
+  width: 200px;
+  border: 0px solid #000000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  text-decoration: none;
+  cursor: default;
+}
+.game .game-questions {
+  height: 600px;
+  color: #fdfffc;
+}
+.game .game-foot {
+  display: grid;
+  justify-content: end;
+  margin-right: 100px;
+}
+.game .game-foot .game-foot-button {
+  text-decoration: none;
+  color: #fdfffc;
+  background-color: #e71d36;
+  height: 100px;
+  width: 100px;
+  border: 0px solid #000000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 100px;
+  margin-bottom: auto;
+}
+.game .game-foot .game-foot-button:hover {
+  -webkit-animation: movey 0.6s linear alternate infinite;
+  animation: movey 0.6s linear alternate infinite;
+  background-color: #c20d22;
+  box-shadow: 0 2px #888888;
+}
+.game .game-foot .game-foot-button span {
+  margin-top: 40px;
+  display: block;
 }
 
 /*# sourceMappingURL=App.css.map */
