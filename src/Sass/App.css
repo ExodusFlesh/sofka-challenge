@@ -170,8 +170,9 @@
 .highscore .highscore-rank-title {
   display: grid;
   width: 100%;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
+  color: #fdfffc;
 }
 .highscore table {
   background-color: #fdfffc;
@@ -197,6 +198,7 @@
 }
 .highscore .highscore-footer .highscore-footer-button {
   width: 10%;
+  color: #fdfffc;
   background-color: #2ec4b6;
   text-decoration: none;
   text-align: center;

@@ -1,9 +1,3 @@
-// @font-face {
-//     font-family: 'Rubik';
-//     src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-// }
-
-
 $white: #fdfffc;
 $bluedark: #011627;
 $bluelight: #2ec4b6;
@@ -187,7 +181,6 @@ $dark: #000000;
             span{
                 margin-top: 40px;
                 display: block;
-
             }
         }
     }
@@ -199,8 +192,9 @@ $dark: #000000;
     .highscore-rank-title{
         display: grid;
         width: 100%;
-        font-size: 15px;
+        font-size: 20px;
         text-align: center;
+        color: $white;
     }
     table{
         background-color: $white;
@@ -225,6 +219,7 @@ $dark: #000000;
         height: 50px;
         .highscore-footer-button{
             width:10%;
+            color: $white;
             background-color: #2ec4b6;
             text-decoration: none;
             text-align: center;
