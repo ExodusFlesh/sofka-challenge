@@ -63,14 +63,11 @@ $dark: #000000;
     cursor: pointer;
 }
 
-
-// General
-
 * {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-// Primera presentacion
+// Review
 
 .containerTitle {
     text-align: center;
@@ -120,7 +117,7 @@ $dark: #000000;
     }
 }
 
-// Segunda Presentacion
+// Inside Game
 
 .game {
     text-align: center;
@@ -191,6 +188,59 @@ $dark: #000000;
                 margin-top: 40px;
                 display: block;
 
+            }
+        }
+    }
+}
+
+// Highscore
+
+.highscore{
+    table{
+        background-color: $white;
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 2%;
+        border-radius: 2px;
+        border-collapse:collapse;
+        text-align:center;
+        margin-bottom: 20%;
+        th{
+            background-color: $bluelight;
+            height: 35px;
+        }
+        td{
+            height: 30px;
+        }
+        .highscore-rank-title{
+            display: grid;
+            width: 138%;
+            font-size: 15px;
+            text-align: center;
+            background-color: $bluelight;
+        }
+    }
+    .highscore-footer{
+        display:flex;
+        justify-content: center;
+        height: 50px;
+        .highscore-footer-button{
+            width:10%;
+            background-color: #2ec4b6;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            @include animation('movey 1s linear alternate infinite');
+            &:hover {
+                background-color: $bluemedium;
+                box-shadow: 0 2px rgb(136, 136, 136);
+            }
+            &:active{
+                background-color: $bluedark;
+            }
+            span{
+                margin-top: 16px;
+                display: block;
             }
         }
     }

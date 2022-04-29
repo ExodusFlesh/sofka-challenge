@@ -151,6 +151,15 @@ let questions = [
     solution: 1
 }];
 
+let highscore = [{
+    name: "Juan",
+    score:100
+}]
+
 export function getQuestions(){
     return questions;
+}
+
+export function getScore(){
+    return highscore;
 }

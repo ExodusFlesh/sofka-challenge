@@ -167,4 +167,54 @@
   display: block;
 }
 
+.highscore table {
+  background-color: #fdfffc;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 2%;
+  border-radius: 2px;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20%;
+}
+.highscore table th {
+  background-color: #2ec4b6;
+  height: 35px;
+}
+.highscore table td {
+  height: 30px;
+}
+.highscore table .highscore-rank-title {
+  display: grid;
+  width: 138%;
+  font-size: 15px;
+  text-align: center;
+  background-color: #2ec4b6;
+}
+.highscore .highscore-footer {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+.highscore .highscore-footer .highscore-footer-button {
+  width: 10%;
+  background-color: #2ec4b6;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-animation: movey 1s linear alternate infinite;
+  animation: movey 1s linear alternate infinite;
+}
+.highscore .highscore-footer .highscore-footer-button:hover {
+  background-color: #00ffe585;
+  box-shadow: 0 2px #888888;
+}
+.highscore .highscore-footer .highscore-footer-button:active {
+  background-color: #011627;
+}
+.highscore .highscore-footer .highscore-footer-button span {
+  margin-top: 16px;
+  display: block;
+}
+
 /*# sourceMappingURL=App.css.map */

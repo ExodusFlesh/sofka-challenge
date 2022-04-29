@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate} from 'react-router-dom';
 
 import { getQuestions } from '../db';
+import { Main } from '../Components/Main';
 
 const Game = () => {
-    
+
     const navigate = useNavigate();
     const [round, setRound] = useState(0);
 
@@ -13,16 +13,17 @@ const Game = () => {
     let categoryQuestion = questions.filter(question => question.category === round +1);
     let currentlyQuestion =  (categoryQuestion[(Math.floor(Math.random() * 5))]);
 
-    function updateData(){
-        const var1 = document.querySelector('.game-score-player-name');
-        var1.innerHTML = ['Catalina'];
+    function finish(){
+        return(
+            navigate("/Highscore")
+        )
     }
 
     function handleAnswer(correct) {
-        correct === true ? setRound(round + 1) : navigate("/Highscore");
+        correct === true ? setRound(round + 1) : finish();
         console.log(round);
         if(round >= 4 ){
-            navigate("/Highscore");
+            finish();
         }
     }
 
@@ -57,18 +58,15 @@ const Game = () => {
             <div className='game-score'>
                 <div className='game-score-player'>
                     <h1>Participante</h1>
-                    <p className='game-score-player-name'>a</p>
+                    <p className='game-score-player-name'>{}</p>
                 </div>
                 <div className='game-score-detail'>
                     <div className='game-score-detail-name'>
-                        <h1>Score</h1>
+                        <h1> Puntos</h1>
                     </div>
                     <div className='game-score-detail-score'>
-                        <p>0</p>
+                        <p>{round*(150*round)}</p>
                     </div>
-                </div>
-                <div className='game-score-time'>
-                    <h1>Time</h1>
                 </div>
             </div>
             {ShowAnswers()}
