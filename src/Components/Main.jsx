@@ -16,7 +16,7 @@ const Main = () => {
             </div>
             <div className='player' >
                 <input placeholder='Nombre' className='playerName' id='playerName' value={text} onChange={handleInputChange} />
-                <Link className='playerStart' to={`/game/${text}`}> Jugar Ahora</Link>
+                <Link className='playerStart' to={text ? `/game/${text}` : ""}> Jugar Ahora</Link>
             </div>
         </div>
     )
