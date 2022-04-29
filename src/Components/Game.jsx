@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate, useParams} from 'react-router-dom';
 
 import { getQuestions } from '../db';
-import { Main } from '../Components/Main';
 
 const Game = () => {
 
-    const navigate = useNavigate();
     const [round, setRound] = useState(0);
+    const [score, setScore] = useState(0);
+    
+    const navigate = useNavigate();
+    const params = useParams();
+
+    console.log(params)
 
     let questions = getQuestions();
     let categoryQuestion = questions.filter(question => question.category === round +1);
     let currentlyQuestion =  (categoryQuestion[(Math.floor(Math.random() * 5))]);
 
+
+
     function finish(){
         return(
-            navigate("/Highscore")
+            navigate(`/highscore/${params.id}/${score}`)
         )
     }
 
     function handleAnswer(correct) {
+        setScore(round*(150*round));
+
         correct === true ? setRound(round + 1) : finish();
-        console.log(round);
+
         if(round >= 4 ){
             finish();
         }
@@ -38,6 +46,7 @@ const Game = () => {
 
     function ShowAnswers() {
         return (
+            
             <div className='game-questions' >
                 {ShowQuestion()}
                 <div className='game-questions-options'>
@@ -58,20 +67,20 @@ const Game = () => {
             <div className='game-score'>
                 <div className='game-score-player'>
                     <h1>Participante</h1>
-                    <p className='game-score-player-name'>{}</p>
+                    <p className='game-score-player-name'>{params.id}</p>
                 </div>
                 <div className='game-score-detail'>
                     <div className='game-score-detail-name'>
                         <h1> Puntos</h1>
                     </div>
                     <div className='game-score-detail-score'>
-                        <p>{round*(150*round)}</p>
+                        <p>{score}</p>
                     </div>
                 </div>
             </div>
             {ShowAnswers()}
             <div className='game-foot'>
-                <Link className='game-foot-button' to="/highscore"><span>Retirarse</span></Link>
+                <Link className='game-foot-button' to={"/highscore"}><span>Retirarse</span></Link>
             </div>
         </div>
     )

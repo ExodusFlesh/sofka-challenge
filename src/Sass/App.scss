@@ -196,6 +196,12 @@ $dark: #000000;
 // Highscore
 
 .highscore{
+    .highscore-rank-title{
+        display: grid;
+        width: 100%;
+        font-size: 15px;
+        text-align: center;
+    }
     table{
         background-color: $white;
         width: 30%;
@@ -211,13 +217,6 @@ $dark: #000000;
         }
         td{
             height: 30px;
-        }
-        .highscore-rank-title{
-            display: grid;
-            width: 138%;
-            font-size: 15px;
-            text-align: center;
-            background-color: $bluelight;
         }
     }
     .highscore-footer{

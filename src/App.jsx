@@ -11,7 +11,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/game/:id" element={<Game/>}/>
-                <Route path="/highscore" element={<Highscore/>}/>
+                <Route path="/highscore/:id/:id2" element={<Highscore/>}/>
                 <Route path="/" element={<Main/>}/>
             </Routes>
         </Router>

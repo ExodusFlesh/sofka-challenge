@@ -8,14 +8,15 @@ const Highscore = () => {
   let list = getScore();
 
 
+
   function ShowPlayers() {
     return (
       <div className='highscore-rank'>
+        <div className='highscore-rank-title'>
+          <h1>HIGHSCORE</h1>
+        </div>
         <table>
           <thead>
-            <tr className='highscore-rank-title'>
-              <h1>HIGHSCORE</h1>
-            </tr>
             <tr>
               <th>NOMBRE</th>
               <th>PUNTOS</th>
@@ -23,8 +24,8 @@ const Highscore = () => {
           </thead>
           <tbody>
             {list.map((player) => (
-              <tr className='highscore-rank-players' >
-                <td key={player.name} >
+              <tr key={player.name} >
+                <td>
                   {player.name}
                 </td>
                 <td key={player.score}>

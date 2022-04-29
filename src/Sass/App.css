@@ -167,6 +167,12 @@
   display: block;
 }
 
+.highscore .highscore-rank-title {
+  display: grid;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
 .highscore table {
   background-color: #fdfffc;
   width: 30%;
@@ -183,13 +189,6 @@
 }
 .highscore table td {
   height: 30px;
-}
-.highscore table .highscore-rank-title {
-  display: grid;
-  width: 138%;
-  font-size: 15px;
-  text-align: center;
-  background-color: #2ec4b6;
 }
 .highscore .highscore-footer {
   display: flex;
