@@ -1,3 +1,4 @@
+
 let questions = [
     
 {
@@ -152,9 +153,14 @@ let questions = [
 }];
 
 let highscore = [{
-    name: "Juan",
-    score:100
-}]
+    name: 'Juan',
+    score: 100
+},{
+    name: 'Carolina',
+    score: 80
+}
+
+]
 
 export function getQuestions(){
     return questions;

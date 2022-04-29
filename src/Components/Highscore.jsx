@@ -7,6 +7,7 @@ const Highscore = () => {
 
   let list = getScore();
 
+  list.push()
 
 
   function ShowPlayers() {
